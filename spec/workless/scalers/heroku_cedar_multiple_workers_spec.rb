@@ -200,7 +200,7 @@ describe Delayed::Workless::Scaler::HerokuCedar do
   private
 
   def if_there_are_jobs(num)
-    Delayed::Workless::Scaler::HerokuCedar.should_receive(:jobs).any_number_of_times.and_return(NumWorkers.new(num))
+    Delayed::Workless::Scaler::HerokuCedar.stub(:jobs).and_return(NumWorkers.new(num))
   end
 
   def should_scale_workers_to(num)

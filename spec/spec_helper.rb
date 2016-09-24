@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'active_support'
 require 'bundler/setup'
 require 'simplecov'
 require 'coveralls'
@@ -9,7 +10,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 ]
 SimpleCov.start
 
-Bundler.require(:default)
+Bundler.setup
 
 require 'workless'
 
